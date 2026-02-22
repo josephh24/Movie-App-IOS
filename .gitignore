@@ -1,2 +1,2 @@
 # Local secrets
-Secrets.xcconfig
+*.xcconfig
