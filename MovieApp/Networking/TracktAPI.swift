@@ -8,7 +8,24 @@
 import Foundation
 
 enum TraktAPI {
-    static let clientID = "99627351af2cdda2bc407b28cf25d3c4eacf1a2ea0b1316e22dbc4a86ae4ff72" // Coloca tu Trakt Client ID
+    static let clientID: String = {
+        let key = "TraktClientID"
+        // 1) Try Info.plist first
+        if let infoValue = Bundle.main.object(forInfoDictionaryKey: key) as? String, !infoValue.isEmpty {
+            return infoValue
+        }
+        // 2) Fallback to Secrets.plist in the main bundle
+        if let url = Bundle.main.url(forResource: "Secrets", withExtension: "plist"),
+           let data = try? Data(contentsOf: url),
+           let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String: Any],
+           let secretsValue = plist[key] as? String, !secretsValue.isEmpty {
+            return secretsValue
+        }
+        #if DEBUG
+        assertionFailure("Missing or empty \(key). Provide it in Info.plist or Secrets.plist.")
+        #endif
+        return ""
+    }()
     
     static func request(for path: String) -> URLRequest? {
         guard let url = URL(string: "\(Endpoints.baseURL)\(path)") else { return nil }
@@ -20,3 +37,4 @@ enum TraktAPI {
         return request
     }
 }
+

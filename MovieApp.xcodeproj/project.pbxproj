@@ -6,8 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8C73E4B72F4B7E9B00369E8A /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8C73E4B62F4B7E9B00369E8A /* Secrets.xcconfig */; };
+		8C73E4BB2F4B7EA000369E8A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8C73E4BA2F4B7EA000369E8A /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8C73E4892F4B73FD00369E8A /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C73E4B62F4B7E9B00369E8A /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		8C73E4B82F4B7E9E00369E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C73E4BA2F4B7EA000369E8A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -34,6 +42,9 @@
 			children = (
 				8C73E48B2F4B73FD00369E8A /* MovieApp */,
 				8C73E48A2F4B73FD00369E8A /* Products */,
+				8C73E4B62F4B7E9B00369E8A /* Secrets.xcconfig */,
+				8C73E4B82F4B7E9E00369E8A /* Info.plist */,
+				8C73E4BA2F4B7EA000369E8A /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +120,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C73E4BB2F4B7EA000369E8A /* .gitignore in Resources */,
+				8C73E4B72F4B7E9B00369E8A /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
