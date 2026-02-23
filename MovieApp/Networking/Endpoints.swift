@@ -8,5 +8,5 @@ import Foundation
 
 struct Endpoints {
     static let baseURL = "https://api.trakt.tv"
-    static let popularMovies = "/movies/popular"
+    static let popularMovies = "/movies/popular?extended=images,full"
 }

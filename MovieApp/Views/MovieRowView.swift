@@ -9,24 +9,37 @@ import SwiftUI
 
 struct MovieRowView: View {
     let movie: Movie
-    
+
     var body: some View {
-        HStack(spacing: 16) {
-            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w200\(movie.poster ?? "")")) { image in
-                image.resizable()
+        HStack(spacing: 12) {
+            AsyncImage(url: posterURL) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
             } placeholder: {
-                Rectangle().fill(.gray.opacity(0.3))
+                ProgressView()
             }
-            .frame(width: 70, height: 110)
-            .cornerRadius(8)
-            
-            VStack(alignment: .leading, spacing: 4) {
+            .frame(width: 80, height: 120)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+
+            VStack(alignment: .leading, spacing: 6) {
                 Text(movie.title)
                     .font(.headline)
-                Text("\(movie.year ?? 0)")
+
+                Text(movie.tagline ?? "")
+                    .font(.subheadline)
                     .foregroundColor(.secondary)
+
+                Text("⭐️ \(String(format: "%.1f", movie.rating))")
+                    .font(.caption)
             }
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, 4)
+    }
+
+    private var posterURL: URL? {
+        guard let path = movie.images.poster?.first else { return nil }
+        return URL(string: "https://" + path)
     }
 }
+

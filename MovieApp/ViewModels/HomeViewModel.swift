@@ -18,7 +18,7 @@ class HomeViewModel: ObservableObject {
     func fetchPopularMovies() async {
         do {
             isLoading = true
-            let result: [Movie] = try await APIClient.shared.fetch("/movies/popular")
+            let result: [Movie] = try await APIClient.shared.fetch(Endpoints.popularMovies)
             self.movies = result
         } catch {
             errorMessage = error.localizedDescription

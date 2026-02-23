@@ -7,21 +7,32 @@
 
 import Foundation
 
-struct Movie: Decodable, Identifiable {
-    let id = UUID()
+struct Movie: Identifiable, Codable {
     let title: String
-    let year: Int?
-    let ids: TraktIDs
-    let overview: String?
-    let poster: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case title, year, ids, overview, poster = "poster"
-    }
+    let year: Int
+    let ids: Ids
+    let tagline: String?
+    let overview: String
+    let runtime: Int?
+    let country: String?
+    let rating: Double
+    let genres: [String]
+    let images: Images
+
+    var id: Int { ids.trakt }
 }
 
-struct TraktIDs: Decodable {
+struct Ids: Codable {
     let trakt: Int
     let slug: String
     let imdb: String?
+    let tmdb: Int?
 }
+
+struct Images: Codable {
+    let poster: [String]?
+    let fanart: [String]?
+    let thumb: [String]?
+}
+
+
