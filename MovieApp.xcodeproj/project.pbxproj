@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C73E4B72F4B7E9B00369E8A /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8C73E4B62F4B7E9B00369E8A /* Secrets.xcconfig */; };
 		8C73E4BB2F4B7EA000369E8A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8C73E4BA2F4B7EA000369E8A /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +91,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					8C73E4882F4B73FD00369E8A = {
 						CreatedOnToolsVersion = 26.2;
@@ -124,7 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C73E4BB2F4B7EA000369E8A /* .gitignore in Resources */,
-				8C73E4B72F4B7E9B00369E8A /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +198,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -257,6 +256,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
